@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+<a href="Javascript:void(0)" onclick="window.alert('hello world', true)">클릭</a>
+<script>
+  window.old_alert = window.alert;
+  window.alert = function(msg, param){
+    if (param){
+      old_alert(msg);
+      return;
+    }else{
+        $(document.createElement('div'))
+        .attr((titlte:"Alert"})
+        .html(msg)
+        .dialog({
+            buttons: {OK: function(){$(this).dialog("close");}}
+            .close: function(){$(this).remove();}
+            .draggable: true
+            .resizable: false
+            .width: "auto"
+        });
+    }
+              
+</script>
+</body>
+</html>
